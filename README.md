@@ -1,4 +1,2 @@
 # spificus.github.io
-Game Design Course Simply Coding
-
-This Repository is where I am demonstrating how to host a web game on Github for my JS game design students.
+A demo of HTML, CSS and JS skills. I built this simple photography website as part of a programming project for my Web Development class at UVU.
