@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Website Main Page</title>
+  <link href="main.css" rel="stylesheet">
+  <script src="main.js" defer></script>
+  <script src="jquery.mask.js" type="text/javascript" defer></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="validation.js"></script>
+  <script>
+    $(document).ready(function () {
+      initValidation("#myform");
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="webpage">
+    <header>
+      <div id="title">
+        <div id="titleTxtBox">
+          <h2>Ian McKell Photography</h2>
+        </div>
+      </div>
+      <nav id="menu">
+        <div id="homeBtn" onclick="home();">
+          <img class="menuImg" src="photos/yourshot-1201903-9777101.jpg" alt="Paragliders">
+          <div class="menuTxt">
+            <p>Home</p>
+          </div>
+        </div>
+
+        <div id="contactBtn" onclick="contact();">
+          <img class="menuImg" src="photos/yourshot-1201903-11475136.jpeg" alt="Surfer">
+          <div class="menuTxt">
+            <p>Contact</p>
+          </div>
+        </div>
+
+        <div id="photographyBtn" onclick="photography();">
+          <img class="menuImg" src="photos/yourshot-1201903-12687281.jpg" alt="Black Bear">
+          <div class="menuTxt">
+            <p>Photography</p>
+          </div>
+        </div>
+
+        <div id="visitorBtn" onclick="visitor();">
+          <img class="menuImg" src="photos/yourshot-1201903-10762577.jpg" alt="Rock Climbers">
+          <div class="menuTxt">
+            <p>Visitor</p>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="homePage">
+        <h1 id="homePageTitle">Home</h1>
+        <div id="homePageTxt">
+          <h1 style="margin-left: 30px;">About me</h1>
+          <ul>
+            <li class="homePageList">I specialize in nature and adventure-sports photography.</li>
+            <li class="homePageList">I've studied documentary photography at Utah Valley University.</li>
+            <li class="homePageList">I've traveled to locations such as Peru, Thailand and Alaska. However, most of my
+              photos are taken right
+              here in Utah.</li>
+            <li class="homePageList">For collaborations see contact page.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contactPage">
+        <h1 id="contactTitle">Contact</h1>
+        <div id="contactTxt">
+          <p>Ian McKell <br>Phone: 801-***-**** <br>Email: *******gmail.com<br> Instagram: ***** </p>
+        </div>
+      </section>
+      <section id="photographyPage">
+        <div class="column">
+          <img class="columnImg" src="photos/yourshot-1201903-10762606.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-13902449.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-7297759.jpg">
+          <img class="columnImg" src="photos/Alaska 2018-52.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-7295674.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-12690172.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-12687180.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-9777101.jpg">
+        </div>
+        <div class="column">
+          <video class="columnImg" controls>
+            <source src="Video/Rock Canyon Apr 2017 Final.mp4" type="video/mp4">
+          </video>
+          <img class="columnImg" src="photos/yourshot-1201903-10762577.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-13906510.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-10775184.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-12690213.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-7295808.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-10762841.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-9780906.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-10762546.jpg">
+          <img class="columnImg" src="photos/yourshot-1201903-9780845.jpg">
+          <img class="columnImg" src="photos/Best Peru landscapes-2.jpg">
+          <img class="columnImg" src="photos/CCDB03F1-8B90-4487-BCE9-C380291B0666_1_201_a.jpeg">
+        </div>
+      </section>
+
+      <section id="visitorPage">
+        <h1 id="visitorTitle">Visitor Form</h1>
+        <div class="successMsg">
+          <h1>Thank you for logging your visit!</h1>
+        </div>
+        <form id="myform">
+          <ul class="flex">
+            <li class="section-display">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Enter your first name here" required>
+              <div class="errorMsg">First Name is Required</div>
+            </li>
+            <li>
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Enter your last name here" required>
+              <div class="errorMsg">Last Name is Required</div>
+            </li>
+            <li>
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" placeholder="Enter your address here" required>
+              <div class="errorMsg"></div>
+            </li>
+            <li>
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" placeholder="Enter your city here" required>
+              <div class="errorMsg"></div>
+            </li>
+            <li>
+              <label for="state">State</label>
+              <input type="text" id="state" name="state" placeholder="Enter your state here" pattern="[a-zA-Z]{2}"
+                required>
+              <div class="errorMsg">Please enter a two character state code</div>
+            </li>
+            <li>
+              <label for="zip">Zip</label>
+              <input id="zip" name="zip" type="text" placeholder="Enter a zip code here" pattern="(\d{5})" required>
+              <div class="errorMsg">You must enter a valid Zip Code</div>
+            </li>
+            <li>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email here"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+              <div class="errorMsg">You must enter a valid email</div>
+            </li>
+            <li>
+              <label for="phone">Phone</label>
+              <input type="phone" id="phone" placeholder="Enter your phone here" data-mask="(000) 000-0000" required>
+              <div class="errorMsg">You must enter a valid phone number</div>
+            </li>
+            <li>
+              <h2>How did you find my page</h2>
+            </li>
+            <li>
+              <input type="checkbox" id='google' name='find-page' value="google">
+              <label for="google">Google Search</label>
+            </li>
+            <li>
+              <input type="checkbox" id='friend' name='find-page' value="friend">
+              <label for="friend">Friend</label>
+            </li>
+            <li>
+              <input type="checkbox" id='newspaper' name='find-page' value="newspaper">
+              <label for="newspaper">News Paper</label>
+              <div class="errorMsg">You must check at least one</div>
+            </li>
+
+            <li>
+              <label for="comment">Comments</label>
+              <textarea rows="4" id="comment" placeholder="Enter your comments here"></textarea>
+            </li>
+
+            <li>
+              <button id="formSubmit" type="submit">Send</button>
+            </li>
+          </ul>
+        </form>
+      </section>
+    </main>
+</body>
+<footer>
+  <p>&#169; Ian McKell</p>
+</footer>
+
+</html>

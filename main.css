@@ -1,0 +1,391 @@
+/* container for entire web page */
+#webpage {
+  position: relative;
+  width: 100%;
+  background-color: lightgray;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+   "head"
+   "main"
+   "footer";
+}
+
+/* container for title and menu, uses grid */
+header {
+  grid-area: head;
+  background-image: url("photos/Head.jpeg");
+  background-size: cover;
+  height: 430px;
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(1fr);
+  grid-template-areas:
+   ". "
+   "."
+   "titleTxt"
+   "."
+   "menuBtn";
+  border-bottom: inset 5px;
+}
+
+/* container for the title */
+#title{
+  grid-area: titleTxt;
+}
+
+#titleTxtBox {
+  font-size: 18px;
+  margin: 0 auto;
+  background-color: rgba(8, 8, 8, 0.1);
+  color: white;
+  font-weight: bold;
+  border: .5px solid #f1f1f1;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  font-family:  "Typewriter", serif;
+}
+
+/* menu houses the 4 menu options */
+#menu {
+  display: flex;
+  min-height: 120px;
+  justify-content: space-around;
+  position: relative;
+  flex-wrap: wrap-reverse;
+  width: auto;
+  grid-area: menuBtn;
+}
+#homeBtn {
+  max-height: 150px;
+  position: relative;
+  display: grid;
+}
+#contactBtn {
+  max-height: 150px;
+  position: relative;
+}
+#photographyBtn {
+  max-height: 150px;
+  position: relative;
+}
+
+#visitorBtn {
+  max-height: 150px;
+  position: relative;
+}
+
+.menuImg {
+  filter: blur(1px);
+  width: auto;
+  max-height:150px;
+}
+
+.menuTxt {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family:  "Typewriter", serif;
+  font-size: x-large;
+  z-index: 1;
+}
+
+@media screen and (max-width: 750px) {
+  #homeBtn{height: 120px;}
+  #contactBtn{height: 120px;}
+  #photographyBtn{height: 120px;}
+  #visitorBtn{height: 120px;}
+  .menuImg{height: 120px;}
+  .menuTxt{font-size: large;}
+  .menuTxt{top: 55%;}
+}
+
+/* gives responsiveness to buttons to let user know they are clickable */
+#homeBtn:hover, #contactBtn:hover, #photographyBtn:hover, #visitorBtn:hover{
+  border: 1.5px solid white;
+}
+
+main{
+  grid-area: main;
+}
+
+/* container for home option, uses grid */
+#homePage {
+  grid-area: homePage;
+  display: grid;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  grid-template-rows: 200px repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  background-image: url("photos/yourshot-1201903-9777101.jpg");
+  grid-template-areas:
+   ". . . title title "
+   ". . . . ."
+   "txt txt . . ."
+   "txt txt . . ."
+   "txt txt . . .";
+}
+
+#homePageTitle{
+  text-align: center;
+  grid-area: title;
+  width: 150px;
+  height: 50px;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+}
+
+#homePageTxt{
+  max-width: 350px;
+  min-width: 265px;
+  margin: 20px;
+  height: auto;
+  line-height: 24px;
+  grid-area: txt;
+  color: white;
+  padding: 10px;
+  background-color: rgba(5, 5, 5, 0.1);
+  border: solid 1px white;
+}
+
+@media screen and (max-width: 750px) {
+  #homePage{height: auto;}
+}
+
+.homePageList{
+  margin: 0 0 10px 0;
+}
+
+/* container for contact option */
+#contactPage{
+  grid-area: contactPage;
+  display: none;
+  height: auto;
+  width: 100%;
+  background-image: url("photos/yourshot-1201903-11475136.jpeg");
+  background-size: cover;
+  grid-template-rows: 200px repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+   ". . . contactTitle contactTitle "
+   ". . . . ."
+   "contactTxt contactTxt . . ."
+   "contactTxt contactTxt . . ."
+   "contactTxt contactTxt . . .";
+}
+
+#contactTitle{
+  grid-area: contactTitle;
+  text-align: center;
+  margin-left: 50px;
+  align-content: center;
+  width: 150px;
+  height: 50px;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+}
+
+
+#contactTxt{
+  grid-area: contactTxt;
+  color: white;
+  width: 250px;
+  margin: 20px auto;
+  padding: 20px;
+  line-height: 40px;
+  font-size: 20px;
+  border: solid white 1px;
+  background-color: rgba(8, 8, 8, 0.2);
+}
+
+#photographyPage{
+  display: none;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column{
+  flex: 25%;
+  max-width: 50%;
+  padding: 0 4px;
+}
+
+.columnImg{
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+
+footer{
+  grid-area: footer;
+  background-color: white;
+}
+
+
+/* Code for fade in animations*/
+
+.fade-in {
+  animation: fadeIn ease 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+/* visitor page css*/
+
+.successMsg{
+  display: none;
+}
+
+#visitorPage{
+  display: none;
+  color: #fff;
+  height: auto;
+  width: 100%;
+  background-image: url("photos/yourshot-1201903-10762748.jpg");
+  background-size: cover;
+  grid-template-rows: 200px repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+   ". . . visitorTitle visitorTitle "
+   "form form form form form"
+   "form form form form form"
+   "form form form form form"
+   "form form form form form"
+}
+
+#visitorTitle{
+  grid-area: visitorTitle;
+  text-align: center;
+  margin-left: 50px;
+  align-content: center;
+  width: 150px;
+  height: 50px;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+}
+
+form {
+  width: 400px;
+  grid-area: form;
+}
+
+.errorMsg {
+  color: red;
+}
+
+input.was-validated:invalid {
+  color: red;
+  border: 1px solid red;
+}
+
+input.was-validated:invalid ~ div {
+  display: block;
+}
+
+input:valid ~ div {
+  display: none;
+}
+
+input:invalid ~ div {
+  display: none;
+}
+
+.flex {
+  list-style-type: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.flex li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.flex li li input,
+.flex li textarea {
+  padding: 15px;
+  font: normal 16px/1.5 sans-serif;
+}
+
+.flex button {
+  margin: auto;
+  padding: 22px 46px;
+  font: normal 22px/1.5 sans-serif;
+  border: none;
+  background: #D84315;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 4px;
+}
+
+.flex > li {
+  margin-bottom: 20px;
+}
+
+.flex > li > label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 140px;
+          flex: 1 0 140px;
+  max-width: 200px;
+}
+
+.flex > li + * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 200px;
+          flex: 1 0 200px;
+}
+
+.flex > input[type='radio'] ~ div.errorMsg,
+.flex > input[type='checkbox'] ~ div.errorMsg {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 350px;
+          flex: 1 0 350px;
+  text-align: right;
+}
+/*# sourceMappingURL=main.css.map */
+
